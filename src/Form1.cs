@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Web.Administration;
@@ -204,6 +205,7 @@ namespace IISUtil_DefaultWebsiteSelector
                     
                     if (site.State != ObjectState.Started)
                     {
+                        Thread.Sleep(1000);
                         site.Start();
                     }
 
